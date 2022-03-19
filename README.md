@@ -23,7 +23,7 @@ This script can associate performer names/studio based on file paths as well (if
   The `OFMetadataDatabase_Sanitizer` script in the Utilities folder will happily produce a clone of the database of your choosing with filepaths/any information not relevant purely to tagging completely redacted.
 
 # Requirements
-  - Fully tested on Stash v0.11 using DC OnlyFans Script v7.6.1 on the following operating systems
+  - Fully tested on Stash v0.13 using DC OnlyFans Script v7.6.1 on the following operating systems
     -  **Windows 10** with Windows Powershell (Built-in)
     -  **Linux** using Powershell Core (both ARM and x86 releases tested)
     -  **macOS** using Powershell Core
