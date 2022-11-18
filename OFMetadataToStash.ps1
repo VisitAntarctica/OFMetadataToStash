@@ -220,10 +220,11 @@ else {
                         $Query = "INSERT INTO performers (checksum, name, url, created_at, updated_at) VALUES ('"+$performernamemd5.hash+"', '"+$performername+"', 'https://www.onlyfans.com/"+$performername+"', '"+$timestamp+"', '"+$timestamp+"')"
                         Invoke-SqliteQuery -Query $Query -DataSource $PathToStashDatabase
                         write-host "`n### INFO ###`nAdded a new Performer ($performername) to Stash's database`n" -ForegroundColor Cyan
+
+                        # Run the query again to get the newly created performer ID
+                        $Query = "SELECT id FROM performers WHERE name LIKE '"+$performername+"'"
+                        $StashDB_PerformerQueryResult = Invoke-SqliteQuery -Query $Query -DataSource $PathToStashDatabase
                     }
-            
-                    $Query = "SELECT id FROM performers WHERE name LIKE '"+$performername+"'"
-                    $StashDB_PerformerQueryResult = Invoke-SqliteQuery -Query $Query -DataSource $PathToStashDatabase
                     $PerformerID = $StashDB_PerformerQueryResult.id
                 }
                 else {
